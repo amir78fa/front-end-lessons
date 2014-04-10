@@ -1,7 +1,8 @@
-Repository: front-end-lessons
+Various (mini) Front-End Projects
 =================
 
-Animated Checkboxes Mini-Project: 
+Checklist with animated checkboxes
+--------------
 Checkboxes are animated through CSS3 transitions and add/remove functionality is implemented using jQuery. A cool font that goes by the name "Font Awesome" provides icons for a checked box and an unchecked box.
 
 http://fortawesome.github.io/Font-Awesome/
