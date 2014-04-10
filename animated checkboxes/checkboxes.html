@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Checkboxes: A learning exercise</title>
+	<meta name="keywords" content="HTML, CSS, checkboxes, animation">
+	<meta name="description" content="Getting better at web development using css to animate html checkboxes.">
+	<meta name="author" content="Catia Goncalves">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1>We're animated checkboxes!</h1>
+	<p>"Getting better at coding one app at a time" </p>
+	<br>
+	<hr>
+	<div id="main">
+		<ol id="checkboxes">
+			<li>
+				<input type="checkbox" id="two" />
+				<label for="two">Eat mighty breakfast</label>
+			</li>
+			<li>
+				<input type="checkbox" id="three" />
+				<label for="three">Get lost in a book for 30 minutes</label>
+			</li>
+			<li>
+				<input type="checkbox" id="four" />
+				<label for="four">Limit self to 3 cups of coffee</label>
+			</li>
+		</ol>
+
+		<!--button with option to add more items to list-->
+		<br>
+		<input type="text" id="another" placeholder="You can..." />
+		<input type="button" id="add_more" value="Add">
+
+		<!--button to clear all checked tasks-->
+		<br>
+		<input type="button" id="remove_checked" value="Remove Checked Items">
+	</div>
+
+	<!--Scripts below  -->
+	<!--First try loading jQuery from Google's CDN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Fall back to a local copy of jQuery if the CDN fails -->
+	<script>
+		window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
+	</script>
+
+	<script src="checkboxes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Stylesheet for animated checkboxes */
+
+/*basic reset*/
+* {
+	margin: 0; 
+	padding: 0;
+	font-size: 21px;
+	text-align: center;
+}
+
+body {
+	font-family: Georgia;
+	background: linear-gradient(to right, white, lightblue);
+	color: rgb(64,64,64);
+	padding-top: 70px;
+	z-index: 1;
+}
+
+h1 { font-size: 36px; }
+
+ol {
+	width: 350px;
+	margin: 0 auto;
+}
+
+ol li {
+	list-style-type: none;
+	text-align: left;
+	padding: 10px;
+}
+
+/* orginal checkbox gone */
+input[type="checkbox"] {
+	display: none;
+}
+
+/* custom checkboxes using Font Awesome */
+label {
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+label:before, label:after {
+	font-family: FontAwesome;
+
+	position: absolute; 
+	top: 0; 
+	left: 0;
+}
+
+/* unchecked */
+label:before {
+	content: '\f096';
+	opacity: 1;
+}
+
+/* checked */
+label:after {
+	content: '\f046';
+
+	/* hidden until checkbox checked */
+	max-width: 0;
+	overflow: hidden;
+	opacity: 0.01;
+}
+
+/* checkbox state is checked */
+input[type="checkbox"]:checked + label:after {
+	/* width expands to show icon and opacity increases visibility */
+	opacity: 1;
+	max-width: 20px; 
+}
+
+
