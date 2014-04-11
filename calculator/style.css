@@ -1,0 +1,108 @@
+/* style.css for a basic calculator */
+/* Using basic box-shadow for 3D effects */
+
+/* Basic reset */
+* {
+	padding: 0;
+	font: bold  20px Georgia;
+	color: grey;
+	text-align: center;
+}
+
+h1 { 	
+	margin: 50px auto -20px auto; 
+	font-size: 65px; 
+}
+
+#calculator {
+	background-color: lightblue;
+	width: 400px;
+	height: auto;
+	border-radius: 5px;
+
+	margin: 50px auto;
+	padding: 20px;
+
+	box-shadow: 5px 5px 2px teal; 
+}
+
+/* display area of calculator */
+.top .display {
+	background-color: grey;
+	height: 35px;
+	width: 278px;
+	border-radius: 3px;
+
+	float: right;
+	margin: 10px;
+	padding-top: 10px;
+
+	text-align: right;
+	font: 30px 'Digital-7';
+	color: black;
+
+	box-shadow: inset 5px 5px 2px darkgrey;
+}
+
+.keys, .top{
+	overflow: hidden; /* clearing floats */
+}
+
+.keys span, .top span.clear, .keys span.backspace {
+	background-color: white;
+	width: 80px;
+	height: 40px;
+	border-radius: 5px;
+	position: relative;
+
+	margin: 10px;
+	float: left;
+
+	line-height: 40px;
+	text-align: center;
+	color: grey;
+
+	cursor: pointer;
+
+	box-shadow: 5px 5px 2px grey; 
+
+	transition: all 0.2s ease;
+}
+
+.keys span.backspace {
+	width: 380px;
+}
+
+/* Key hovering */
+.keys span:hover, .top span.clear:hover {
+	color: black;
+	font-size: 30px;
+}
+
+/* Key pressing */
+.keys span:active, .top span.clear:active {
+	top: 4px;
+	box-shadow: 1px 1px 1px grey;
+	font-size: 20px; 
+	color: grey;
+}
+
+.top span.clear { background-color: lightpink; }
+.keys span.operator { background-color: beige; }
+.keys span.eval { background-color: lightgreen; }
+
+
+/*
+ * True Type Font: LED Digital 7 version 1.0
+ * The font LED Digital 7 is freeware for home using only.
+ * 
+ * @vendor:     Sizenko Alexander
+ * @licenseurl: http://www.fontspace.com/style-7
+ */
+
+@font-face {
+	font-family: 'Digital-7';
+	src: url('digital-7.mono.ttf');
+	src: local('Digital-7'), url('digital-7.mono.ttf') format('truetype');
+}
+

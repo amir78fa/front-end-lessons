@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Calculator: A learning exercise</title>
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="description" content="Getting better at javascript and css by working out a basic calculator app.">
+	<meta name="author" content="Catia Goncalves">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<h1>I'm a calculator!</h1>
+	<p>"Getting better at coding one app at a time"</p>
+	<div id="calculator">
+		
+		<!-- Clear key and display -->
+		<div class="top">
+			<span class="clear">CE</span>
+			<div class="display"></div>
+		</div>
+
+		<!-- operators and other keys -->
+		<div class="keys">
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span class="operator">&#43;</span> <!--plus sign -->
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span class="operator">&#45;</span> <!--minus sign-->
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<!--division, weird line height using &#247;-->
+			<span class="operator">/</span> 
+			<span>0</span>
+			<span>.</span>
+			<span class="eval">&#61;</span> <!--equal sign-->
+			<!--multiplication, weird line height with &#215;-->
+			<span class="operator">x</span> 
+			<span class="backspace">Oops...Backspace</span> <!--just like on a keyboard!-->
+		</div>
+	</div>
+
+	<!--First try loading jQuery from Google's CDN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Fall back to a local copy of jQuery if the CDN fails -->
+	<script>
+		window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
+	</script>
+
+	<script src="calc.js"></script>
+	<!--Prefixfree plugin, adds the current browser’s prefix to any CSS code, 
+	only when it’s needed. -->
+	<script scr="prefixfree.min.js"></script>
+
+</body>
+</html>
