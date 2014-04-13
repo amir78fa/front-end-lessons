@@ -1,0 +1,140 @@
+/*very basic reset*/
+* {
+	margin: 0;
+	padding: 0;
+	color: rgb(64,64,32); /*shade of grey*/
+}
+
+html {
+	background-image: url('light_grey.png');
+	background-color: darkgrey;
+	margin: 50px auto 0 auto;
+	text-align: center;
+}
+
+body {
+	font: Georgia, serif; 
+}
+
+h1 { font-size: 45px;}
+
+/* Form */
+#form-ms {
+	width: 450px;
+	height: auto;
+	position: relative;
+
+	margin: 50px auto;
+	padding: 15px;
+
+	text-align: center;
+}
+
+#form-ms fieldset {
+	width: 85%;
+	margin: 30px 20px 0 20px;
+	padding: 15px 10px 10px 10px;
+	border: none;
+	border-radius: 5px;
+	box-sizing: border-box;
+
+	background-color: lightyellow;
+	box-shadow:  0px 5px 2px lightgrey; 
+
+	position: absolute; /* for stacking */
+}
+
+#form-ms fieldset:not(:first-of-type) {
+	display: none; /*hide all except first*/
+}
+
+#form-ms fieldset .fs-title {
+	font-size: 24px;
+	text-transform: uppercase;
+}
+#form-ms fieldset .fs-subtitle {
+	font-size: 16px;
+	margin: 15px 5px 20px 5px;
+}
+
+#form-ms input, #form-ms textarea {
+	width: 70%;
+
+	padding: 10px;
+	margin: 0 0px 15px 0px;
+	border: 1px solid black;
+	border-radius: 3px;
+	box-sizing: border-box; /*keep padding and border inside */
+
+	font-size: 14px;
+}
+
+/* action buttons */
+#form-ms .action-button {
+	width: 140px;
+	background: lightgreen;
+	border: none;
+	margin: 20px;
+
+	cursor: pointer;
+}
+
+/* Progress bar */
+#bar-progress {
+	counter-reset: step;
+	padding: 30px;
+}
+
+#bar-progress li {
+	list-style: none;
+	font-size: 14px;
+	width: 33.3%;
+
+	float: left;
+	position: relative;
+	padding: 0;
+
+	text-transform: uppercase;
+}
+
+#bar-progress li:before {
+	content: counter(step);
+	counter-increment: step;
+	
+	width: 20px;
+	margin: 0 auto 3px auto;
+	border-radius: 5px;
+	display: block;
+	
+	background: lightblue;
+	color: white;
+	font-size: 18px;
+}
+
+#bar-progress li:after {
+	content: '';
+
+	width: 100%;
+	height: 5px;
+	position: absolute;
+	left: -50%;
+	top: 10px;
+
+	background: lightblue;
+	z-index: -1; /*hide behind*/
+}
+
+#bar-progress li:first-child:after {
+	content: none; /*first doesn't need a connector*/
+}
+
+#bar-progress li.after:before, 
+#bar-progress li.active:before, 
+#bar-progress li.active:after {
+	background: lightgreen;
+	color: black;
+}
+
+
+
+
