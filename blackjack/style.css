@@ -1,0 +1,30 @@
+/* Style sheet for Blackjack JS game */
+
+/* Basic reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: bold  20px Georgia;
+	color: darkgreen;
+	margin: 20px auto;
+	text-align: center;
+}
+
+header {
+	padding: 10px;
+	margin: 10px;
+	border-bottom: solid 2px grey;
+}
+
+.blackjack {
+	height: 300px;
+	width: 500px;
+	margin: 0 auto;
+
+	color: white;
+	font-size: .8em;
+	background-color: green;
+}

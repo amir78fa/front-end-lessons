@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blackjack!</title>
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="description" content="Getting better at javascript and css by working out a basic calculator app.">
+	<meta name="author" content="Catia Goncalves">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<header>
+		<h1>Let's play Blackjack!</h1>
+		<p>"Getting better at coding one app at a time"</p>
+	</header>
+	
+	<div class="blackjack">
+		<!-- Dealer's area. -->
+		<div id="dealer" class="table">
+		  <h2>Dealer's Side </h2>
+		  <div id="dealer-score"></div>
+		  <div class="hand"></div>
+		</div>
+
+		<!-- Main player's area. -->
+		<div id="player" class="table">
+		  <h2>Player's Side </h2>
+		  <div id="player-score"></div>
+		  <div class="hand"></div>
+		  <input type="button" value="Deal" name="deal">
+		  <input type="button" value="Hit" name="hit">
+		  <input type="button" value="Stand" name="stand">
+		</div>
+
+		<!-- Results area. -->
+		<div id="result"></div>
+
+	</div>
+
+	<!--First try loading jQuery from Google's CDN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+	</script>
+	<script src="card.js"></script>
+	<script src="deck.js"></script>
+	<script src="blackjack.js"></script>
+
+	<!--Prefixfree plugin, adds the current browser’s prefix to any CSS code, 
+	only when it’s needed. -->
+	<script scr="prefixfree.min.js"></script>
+
+</body>
+</html>
