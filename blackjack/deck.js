@@ -4,16 +4,16 @@
  * @constructor
  */
 function Deck() {
-	this.deck = [];
-  var c = 0;
+  this.cards = [];
+  this.count = 0;
   for (var v = 1; v <= 13; v++) {
     for (var s = 1; s <= 4; s++) {
-      this.deck[this.count] = new Card(v,s);
-      console.log("just created: " + this.deck[this.count].toString())
+      this.cards[this.count] = new Card(v,s);
+      console.log("just created: " + this.cards[this.count].toString());
+      console.log("just created: " + this.count + " " + this.cards[this.count].suit + " " + this.cards[this.count].value);
       this.count++;
     }
   }
-  this.count = 52;
 }
  
 /*
@@ -22,19 +22,16 @@ function Deck() {
  * @return shuffled deck
  */
 Deck.prototype.shuffle = function(nTimes) {
-	if (arguments.length == 0) {
-		var nTimes = 52;
-	}
-	if (arguments[0] < 1) {
-		throw "Shuffle requires positive number of card swaps.";
-	}
-	for (var i = nTimes; i > 0; i--) {
-    var card1 = Math.floor(Math.random(i)*(i+1));
-    var temp = this.deck[card1];
-    this.deck[card1] = this.deck[i];
-    this.deck[i] = temp;
+  if (nTimes === undefined) {
+    nTimes = 10;
   }
-  return this.deck;
+  for (var i = 0; i < nTimes; i++) {
+    var card1 = Math.floor(Math.random()*52);
+    var card2 = Math.floor(Math.random()*52);
+    var temp = this.cards[card2];
+    this.cards[card2] = this.cards[card1];
+    this.cards[card1] = temp;
+  }
 }
 
 /*
@@ -42,9 +39,9 @@ Deck.prototype.shuffle = function(nTimes) {
  * @return card removed from deck
  */
 Deck.prototype.nextCard = function() {
-	if (this.count < 1) {
-		throw "Deck is already empty."
-	}
-	this.count = this.count - 1;
-	return this.deck[this.count]
+  if (this.count < 1) {
+    throw "Deck is already empty."
+  }
+  this.count = this.count - 1;
+  return this.cards.pop();
 }

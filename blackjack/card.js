@@ -1,5 +1,4 @@
-// Standard playing card in Javascript
-
+/************************** Card Class ****************************/
 /* 
  * Constructs a basic card. If given parameters, it sets them too.
  * value: number between 1 and 13
@@ -9,9 +8,11 @@
 function Card(value, suit) {
 	this.value = -1;
 	this.suit = -1;
+	this.isVisible = true;
 
 	if (arguments.length >= 2) {
-		this.set(arguments[0], arguments[1]);
+		this.value = value;
+		this.suit = suit;
 	} 
 }
 
@@ -38,6 +39,14 @@ Card.prototype.setValue = function(value) {
 }
 
 /*
+ * gets the value of a card.
+ * @return the value of the card, valid between 1 and 13
+ */
+Card.prototype.getValue = function() {
+	return (this.value > 10) ? 10 : this.value;
+}
+
+/*
  * sets the suit of a card.
  * @parameter suit the suit of the card, valid between 1 and 4
  */
@@ -50,26 +59,42 @@ Card.prototype.setSuit = function(suit) {
 }
 
 /*
+ * Hides a card.
+ */
+Card.prototype.setFaceDown = function() {
+	this.isVisible = false;
+}
+
+/*
+ * Makes a card visible.
+ */
+Card.prototype.setFaceUp = function() {
+	this.isVisible = true;
+}
+
+/*
  * toString method returns a string, value of suit
  * @return String
  */
 Card.prototype.toString = function() {
-    if (this.value == -1 || this.suit == -1)
-       return "Genetic card, no value or suit set";
-    var name = "";
-    switch (this.value) {
-       case 1: name += "Ace"; break;
-       case 11: name += "Jack"; break;
-       case 12: name += "Queen"; break;
-       case 13: name += "King"; break;
-       default: name += this.value; break;
-    }
-    name += " of ";
-    switch (this.suit) {
-       case 1: name += "Clubs"; break;
-       case 2: name += "Diamonds"; break;
-       case 3: name += "Hearts"; break;
-       case 4: name += "Spades"; break;
-    }
-    return name;
+	if (!this.isVisible)
+		return "Face down card."
+  if (this.value == -1 || this.suit == -1)
+    return "Genetic card, no value or suit set";
+  var name = "";
+  switch (this.value) {
+    case 1: name += "Ace"; break;
+    case 11: name += "Jack"; break;
+    case 12: name += "Queen"; break;
+    case 13: name += "King"; break;
+    default: name += this.value; break;
+  }
+  name += " of ";
+  switch (this.suit) {
+    case 1: name += "Clubs"; break;
+    case 2: name += "Diamonds"; break;
+    case 3: name += "Hearts"; break;
+    case 4: name += "Spades"; break;
+  }
+  return name;
 }

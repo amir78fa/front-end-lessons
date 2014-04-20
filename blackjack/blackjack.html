@@ -18,19 +18,27 @@
 		<!-- Dealer's area. -->
 		<div id="dealer" class="table">
 		  <h2>Dealer's Side </h2>
-		  <div id="dealer-score"></div>
+		  <form> 
+		  	<label for="score">Dealer Score:</label>
+		  	<input type="text" name="score">
+		  </form>
 		  <div class="hand"></div>
 		</div>
 
 		<!-- Main player's area. -->
 		<div id="player" class="table">
 		  <h2>Player's Side </h2>
-		  <div id="player-score"></div>
+		  <form> 
+		  	<label for="score">Your Score:</label>
+		  	<input type="text" name="score">
+		  </form>
 		  <div class="hand"></div>
-		  <input type="button" value="Deal" name="deal">
-		  <input type="button" value="Hit" name="hit">
-		  <input type="button" value="Stand" name="stand">
 		</div>
+
+		<!-- Game options, disabled/enabled appropriately with jQuery -->
+		<input type="button" value="Deal" id="deal">
+		<input type="button" value="Hit" id="hit">
+		<input type="button" value="Stand" id="stand">
 
 		<!-- Results area. -->
 		<div id="result"></div>
