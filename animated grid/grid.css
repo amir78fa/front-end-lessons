@@ -1,0 +1,19 @@
+/* Stylesheet for magnifying glass */
+
+/* basic reset*/
+* {
+	margin: 0; 
+	padding: 0;
+	font-family: Georgia;
+}
+
+body {
+	text-align: center;
+	margin: 0 auto;
+}
+
+header {
+	padding: 30px;
+}
+	
+/* Grid */
